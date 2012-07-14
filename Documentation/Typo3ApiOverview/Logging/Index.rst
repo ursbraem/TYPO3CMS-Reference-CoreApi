@@ -15,8 +15,8 @@
 .. role::   php(code)
 
 
-TYPO3 API overview
-==================
+Logging with TYPO3
+------------------
 
 
 .. toctree::
@@ -25,16 +25,7 @@ TYPO3 API overview
    :glob:
 
    Introduction/Index
-   GeneralFunctions/Index
-   Typo3CoreEngine(tce)/Index
-   Hooks/Index
-   VariablesAndConstants/Index
-   BackendUserObject/Index
-   Logging/Index
-   UsingTheSystemRegistry/Index
-   PhpClassExtension/Index
-   AjaxInTheTypo3Backend/Index
-   UsingThird-partyJavascriptLibrariesInTheTypo3Backend/Index
-   FlashMessages/Index
-   VariousExamples/Index
+   Logger/Index
+   Writers/Index
+   Processors/Index
 

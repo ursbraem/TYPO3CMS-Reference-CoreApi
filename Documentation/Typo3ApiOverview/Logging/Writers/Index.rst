@@ -14,15 +14,7 @@
    :class:  typoscript
 .. role::   php(code)
 
+.. _Typo3ApiOverview-Logging-Writers:
 
-Using the system log
---------------------
-
-
-.. toctree::
-   :maxdepth: 5
-   :titlesonly:
-   :glob:
-
-   TheLogTable(sysLog)/Index
-
+Log Writers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
