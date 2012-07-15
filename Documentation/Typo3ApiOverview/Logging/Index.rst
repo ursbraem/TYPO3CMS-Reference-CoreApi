@@ -26,6 +26,7 @@ Logging with TYPO3
 
    Introduction/Index
    Logger/Index
+   Configuration/Index
    Writers/Index
    Processors/Index
 
