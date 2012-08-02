@@ -1,24 +1,15 @@
-﻿
-
-.. ==================================================
+﻿.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 .. _Typo3ApiOverview-Logging-Configuration:
 
 Configuration of the Logging system
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+===================================
 
 Instantiation of Loggers is configuration-free, as the LogManager automatically applies its configuration.
 
@@ -32,6 +23,8 @@ To apply a configuration for e.g. all Loggers with the :php:`t3lib_cache_` prefi
 The same holds, of course, for extensions: To treat all extensions differently than the core classes, configuration is
 searched for in :php:`$TYPO3_CONF_VARS['LOG']['tx']` (as extension class names start with :php:`tx` or :php:`Tx` and all
 class names are converted to lowercase).
+
+.. _Typo3ApiOverview-Logging-Configuration-Writer:
 
 Writer configuration
 --------------------
@@ -84,7 +77,7 @@ WARNING, ERROR, ..) is applied to log entries of the particular severity level p
 log messages created with :php:`$logger->warning()` will be affected by a :php:`writerConfiguration` for
 :php:`t3lib_log_Level::DEBUG`.
 
-For a list of writers shipped with the TYPO3 Core see :ref:`Typo3ApiOverview-Logging-Writers`.
+For a list of writers shipped with the TYPO3 Core see the configuration about :ref:`Log Writers <Typo3ApiOverview-Logging-Writers>`.
 
 
 Processor configuration

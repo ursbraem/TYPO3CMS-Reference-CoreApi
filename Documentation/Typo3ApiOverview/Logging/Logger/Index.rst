@@ -1,24 +1,15 @@
-﻿
-
-.. ==================================================
+﻿.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
+.. include:: ../../../Includes.txt
 
 
 .. _Typo3ApiOverview-Logging-Logger:
 
 Logger
-^^^^^^
+======
 
 Instantiation
 -------------
@@ -64,9 +55,9 @@ Log() method
 
 An early return in the :php:`log` method prevents unneeded computation work to be done. So you are safe to call :php:`$logger->debug()` frequently without slowing down your code a lot. The Logger will know by its configuration, what it most explicit severity level is.
 
-As next step, all registered :ref:`Typo3ApiOverview-Logging-Processors` will be notified, which can modify the log entries or add additional information.
+As next step, all registered :ref:`Processors <Typo3ApiOverview-Logging-Processors>` will be notified, which can modify the log entries or add additional information.
 
-The Logger then forwards the log entry to all of its configured :ref:`Typo3ApiOverview-Logging-Writers`, which will then persist the log entry.
+The Logger then forwards the log entry to all of its configured :ref:`Writers <Typo3ApiOverview-Logging-Writers>`, which will then persist the log entry.
 
 Shorthand methods
 -----------------

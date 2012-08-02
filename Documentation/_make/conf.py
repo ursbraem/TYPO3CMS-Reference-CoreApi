@@ -41,7 +41,7 @@ source_suffix = '.rst'
 master_doc = 'Index'
 
 # General information about the project.
-project   = u'Project name'
+project   = u'Core API'
 copyright = u'2012, Author name(s)'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -194,8 +194,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('Index', 'Projectname.tex', u'Project name Documentation',
-   u'Author name(s)', 'manual'),
+  ('Index', 'Projectname.tex', u'TYPO3 Core API Documentation',
+   u'Steffen Gebert et al.', 'typo3manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
