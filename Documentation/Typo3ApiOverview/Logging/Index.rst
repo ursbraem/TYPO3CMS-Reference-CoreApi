@@ -18,4 +18,5 @@ Logging with TYPO3
    Logger/Index
    Configuration/Index
    Writers/Index
+   Processors/Index
 

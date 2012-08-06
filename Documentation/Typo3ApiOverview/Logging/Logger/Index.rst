@@ -47,10 +47,10 @@ Log() method
   - :php:`t3lib_log_Level::INFO`
   - :php:`t3lib_log_Level::DEBUG`
 
-:php:`message`
+:php:`$message`
    Contains the log message as string.
 
-:php:`data`
+:php:`$data`
    Optional parameter, can contain additional data, which is added to the log record in form of an array.
 
 An early return in the :php:`log` method prevents unneeded computation work to be done. So you are safe to call :php:`$logger->debug()` frequently without slowing down your code a lot. The Logger will know by its configuration, what it most explicit severity level is.
