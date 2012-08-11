@@ -1,4 +1,4 @@
-﻿.. ==================================================
+.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
@@ -10,7 +10,7 @@
 Log Writers
 ===========
 
-The purpose of a log writer is (usually) to save all log entries into a persistent storage, like a log file, a database table, or to a remote syslog server.
+The purpose of a log writer is (usually) to save all log records into a persistent storage, like a log file, a database table, or to a remote syslog server.
 
 Different log writers offer possibilities to log into different targets. Custom log writers can extend the functionality shipped with TYPO3 core.
 
@@ -34,7 +34,7 @@ logTable   no          Database table                ``sys_log``
 FileWriter
 ^^^^^^^^^^
 
-The file writer logs into a log file, one log entry per line.
+The file writer logs into a log file, one log record per line.
 If the log file does not exist, it will be created (including parent directories, if needed). Please make sure that your web server has write-permissions to that path and it is below the root directory of your web site (defined by :php:`PATH_site`).
 
 =========  ==========  ============================  =============================
