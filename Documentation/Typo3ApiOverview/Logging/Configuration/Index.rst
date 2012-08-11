@@ -1,4 +1,4 @@
-﻿.. ==================================================
+.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
@@ -16,6 +16,8 @@ Instantiation of Loggers is configuration-free, as the LogManager automatically 
 The Logger configuration is read from :php:`$TYPO3_CONF_VARS['LOG']`, which contains an array reflecting the class
 hierarchy of your TYPO3 project.
 
+Example:
+
 To apply a configuration for e.g. all Loggers with the :php:`t3lib_cache_` prefix, the configuration is read from
 :php:`$TYPO3_CONF_VARS['LOG']['t3lib']['cache']`. So every logger requested for classes like :php:`t3lib_cache_Manager`,
 :php:`t3lib_cache_backend_Redis`, etc. will get this configuration applied.
@@ -29,7 +31,7 @@ class names are converted to lowercase).
 Writer configuration
 --------------------
 
-The Log Writer configuration is read from the subkey :php:`writerConfiguuration` of the configuration array:
+The Log Writer configuration is read from the subkey :php:`writerConfiguration` of the configuration array:
 
 .. code-block:: php
 
@@ -84,7 +86,7 @@ Processor configuration
 -----------------------
 
 According to the writer configuration, log record record processors can be configured on a per-class and per-namespace
-basis:
+basis from the subkey :php:`proessorConfiguration`
 
 .. code-block:: php
 
@@ -92,7 +94,11 @@ basis:
    $TYPO3_CONF_VARS['LOG']['processorConfiguration'] = array(
        // configuration for ERROR level log entries
      t3lib_log_Level::ERROR => array(
-         // add a WebProcessor
-       't3lib_log_processor_Web' => array()
+         // add a MemoyUsageProcessor
+       't3lib_log_processor_MemoryUsage' => array(
+         'formatSize' => FALSE
+       )
      )
    );
+
+For a list of processors shipped with the TYPO3 Core see the configuration about :ref:`Log Processors <Typo3ApiOverview-Logging-Processors>`.
