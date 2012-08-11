@@ -12,9 +12,7 @@ Log Record Processors
 
 The purpose of a log processor is (usually) to add more detailed information to a log record.
 
-Log processors allow to manipulate log records without changing the code where the log method actually is called (inversion of control).
-
-The TYPO3 core ships some basic log processors, but more can be added with extensions.
+Log processors allow to manipulate log records without changing the code where the log method actually is called (inversion of control). This enables you to add any information from outside the scope of the actual calling function, for example webserver environment variables. The TYPO3 core ships some basic log processors, but more can be added with extensions.
 
 
 Built-in Log Processors
