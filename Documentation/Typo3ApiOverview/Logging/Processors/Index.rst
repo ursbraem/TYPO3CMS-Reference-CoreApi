@@ -46,7 +46,7 @@ memoryUsage
 ================  ==========  ===========================================================================  =============================
 Option            Mandatory   Description                                                                  Default
 ================  ==========  ===========================================================================  =============================
-realUsage         no          Use real_ size of memory allocated from system instead of emalloc() value.   ``TRUE``
+realMemoryUsage   no          Use real_ size of memory allocated from system instead of emalloc() value.   ``TRUE``
 ================  ==========  ===========================================================================  =============================
 
 .._real: http://php.net/manual/de/function.memory-get-usage.php
@@ -63,10 +63,10 @@ memoryPeakUsage
 ================  ==========  ===========================================================================  =============================
 Option            Mandatory   Description                                                                  Default
 ================  ==========  ===========================================================================  =============================
-realUsage         no          Use real_ size of memory allocated from system instead of emalloc() value.   ``TRUE``
+realMemoryUsage   no          Use real_ size of memory allocated from system instead of emalloc() value.   ``TRUE``
 ================  ==========  ===========================================================================  =============================
 
-.._real: http://php.net/manual/de/function.memory-get-usage.php
+.._real: http://php.net/manual/de/function.memory-get-peak-usage.php
 
 
 WebProcessor
