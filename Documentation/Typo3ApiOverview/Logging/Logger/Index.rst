@@ -1,4 +1,4 @@
-﻿.. ==================================================
+.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
@@ -22,7 +22,7 @@ The :php:`LogManager` enables an auto-configured usage of :php:`Loggers` in your
    /** @var t3lib_log_AbstractLogger */
    $logger = t3lib_log_LogManager::getLogger(__CLASS__);
 
-Using :php:`__CLASS__` as name for the logger is strictly recommended to enable logging configuration based on the class hierarchy.
+Using :php:`__CLASS__` as name for the logger is recommended to enable logging configuration based on the class hierarchy.
 
 
 Log() method
@@ -55,9 +55,9 @@ Log() method
 
 An early return in the :php:`log` method prevents unneeded computation work to be done. So you are safe to call :php:`$logger->debug()` frequently without slowing down your code a lot. The Logger will know by its configuration, what it most explicit severity level is.
 
-As next step, all registered :ref:`Processors <Typo3ApiOverview-Logging-Processors>` will be notified, which can modify the log entries or add additional information.
+As next step, all registered :ref:`Processors <Typo3ApiOverview-Logging-Processors>` will be notified, which can modify the log records or add additional information.
 
-The Logger then forwards the log entry to all of its configured :ref:`Writers <Typo3ApiOverview-Logging-Writers>`, which will then persist the log entry.
+The Logger then forwards the log records to all of its configured :ref:`Writers <Typo3ApiOverview-Logging-Writers>`, which will then persist the log record.
 
 Shorthand methods
 -----------------
