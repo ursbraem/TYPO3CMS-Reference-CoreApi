@@ -70,5 +70,7 @@ Custom Log Writers
 ------------------
 
 Custom log writers can be added through extensions. Every log writer has to implement the interface :php:`t3lib_log_writer_Writer`.
+It is suggested to extend the abstract class :php:`t3lib_log_writer_Abstract` which allows you use configuration options by adding the corresponding properties and setter methods.
+
 
 Please keep in mind that TYPO3 will silently continue operating, in case a log writer is throwing an exception while executing the :php:`writeLog()` method. Only in the case that all registered writers fail, the log entry plus additional information will be added to the configured fallback logger (which defaults to the :ref:`PhpErrorLog <Typo3ApiOverview-Logging-Writers-PhpErrorLogWriter>` writer).
