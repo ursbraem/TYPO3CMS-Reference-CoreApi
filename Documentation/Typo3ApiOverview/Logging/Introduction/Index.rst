@@ -1,4 +1,4 @@
-﻿.. ==================================================
+.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
@@ -12,7 +12,8 @@ TYPO3 Logging consists of the following objectives:
 
 * A :ref:`Logger <Typo3ApiOverview-Logging-Logger>` that receives the Log message and related details, like a severity
 * :ref:`Configuration <Typo3ApiOverview-Logging-Configuration>` of the logging system
-* :ref:`Writers <Typo3ApiOverview-Logging-Writers>` that write the log entries to different targets (like file, database, rsyslog server, etc.)
+* :ref:`Writers <Typo3ApiOverview-Logging-Writers>` which write the log entries to different targets (like file, database, rsyslog server, etc.)
+* :ref:`Processors <Typo3ApiOverview-Logging-Processors>` which add more detailed information to the Log record.
 
 
 Quick Usage
