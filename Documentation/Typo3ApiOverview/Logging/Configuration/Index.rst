@@ -13,16 +13,18 @@ Configuration of the Logging system
 
 Instantiation of Loggers is configuration-free, as the LogManager automatically applies its configuration.
 
-The Logger configuration is read from :php:`$TYPO3_CONF_VARS['LOG']`, which contains an array reflecting the class
-hierarchy of your TYPO3 project.
+The Logger configuration is read from :php:`$TYPO3_CONF_VARS['LOG']`, which contains an array reflecting the namespace
+and class hierarchy of your TYPO3 project.
 
 Example:
 
-To apply a configuration for e.g. all Loggers with the :php:`t3lib_cache_` prefix, the configuration is read from
-:php:`$TYPO3_CONF_VARS['LOG']['t3lib']['cache']`. So every logger requested for classes like :php:`t3lib_cache_Manager`,
-:php:`t3lib_cache_backend_Redis`, etc. will get this configuration applied.
+To apply a configuration for e.g. all Loggers within the :php:`\TYPO3\CMS\Core\Cache` namespace, the configuration is
+read from :php:`$TYPO3_CONF_VARS['LOG']['TYPO3']['CMS']['Core']['Cache']`. So every logger requested for classes like
+:php:`\TYPO3\CMS\Core\Cache\CacheFactory`, :php:`\TYPO3\CMS\Core\Cache\Backend\NullBackend`, etc.
+will get this configuration applied. The same holds for the old pseudo-namespaces with underscore separator which
+are still common in extensions.
 
-The same holds, of course, for extensions: To treat all extensions differently than the core classes, configuration is
+Configuring Logging for extensions works the same: To treat all extensions differently than the core classes, configuration is
 searched for in :php:`$TYPO3_CONF_VARS['LOG']['tx']` (as extension class names start with :php:`tx` or :php:`Tx` and all
 class names are converted to lowercase).
 
