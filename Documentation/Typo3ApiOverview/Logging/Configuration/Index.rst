@@ -49,14 +49,14 @@ The Log Writer configuration is read from the subkey :php:`writerConfiguration` 
      )
    );
 
-To apply a special configuration for classes within the "namespace" :php:`tx_myext`, use the following configuration:
+To apply a special configuration for classes of the *log_example* extension :php:`tx_logexample`, use the following configuration:
 
 .. code-block:: php
 
    <?php
-   $TYPO3_CONF_VARS['LOG']['tx']['myext']['writerConfiguration'] = array(
+   $TYPO3_CONF_VARS['LOG']['tx']['logexample']['writerConfiguration'] = array(
        // configuration for DEBUG severity, including all
-       // less-critical levels (INFO, WARNING, ERROR, ...)
+       // levels with higher severity (INFO, WARNING, ERROR, ...)
      t3lib_log_Level::DEBUG => array(
          // add a FileWriter
        't3lib_log_writer_File' => array(
@@ -65,21 +65,20 @@ To apply a special configuration for classes within the "namespace" :php:`tx_mye
        )
      ),
        // configuration for WARNING severity, including all
-       // less-critical levels (ERROR, CRITICAL, EMERGENCY)
+       // levels with higher severity (ERROR, CRITICAL, EMERGENCY)
      t3lib_log_Level::WARNING => array(
          // add a SyslogWriter
        't3lib_log_writer_Syslog' => array(),
-         // add an additional FileWriter
-       't3lib_log_writer_File' => array(
-         'logFile' => 'typo3temp/logs/tx_myext-warning.log'
-       )
      ),
    );
 
-An arbitrary number of writers can be added for every severity level. The configuration based on severity levels (INFO,
-WARNING, ERROR, ..) is applied to log entries of the particular severity level plus all less-critical levels. Thus, a
+An arbitrary number of writers can be added for every severity level (INFO, WARNING, ERROR, ...). The configuration based on
+severity levels is applied to log entries of the particular severity level plus all levels with a higher severity. Thus, a
 log messages created with :php:`$logger->warning()` will be affected by a :php:`writerConfiguration` for
-:php:`t3lib_log_Level::DEBUG`.
+:php:`t3lib_log_Level::DEBUG, t3lib_log_Level::INFO, t3lib_log_Level::NOTICE and t3lib_log_Level::WARNING`.
+For the above example code that means:
+* Calling :php:`$logger->warning($msg);` will result in $msg being written to a file and to syslog.
+* Calling :php:`$logger->debug($msg);` will result in $msg being written to a file.
 
 For a list of writers shipped with the TYPO3 Core see the configuration about :ref:`Log Writers <Typo3ApiOverview-Logging-Writers>`.
 
@@ -93,7 +92,7 @@ basis from the subkey :php:`proessorConfiguration`
 .. code-block:: php
 
    <?php
-   $TYPO3_CONF_VARS['LOG']['processorConfiguration'] = array(
+   $TYPO3_CONF_VARS['LOG']['tx']['logexample']['processorConfiguration'] = array(
        // configuration for ERROR level log entries
      t3lib_log_Level::ERROR => array(
          // add a MemoyUsageProcessor
