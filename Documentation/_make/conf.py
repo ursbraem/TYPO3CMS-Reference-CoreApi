@@ -312,7 +312,7 @@ intersphinx_mapping = {}
 #
 #-------------------------------------------------
 
-if 1 and "TYPO3 specific":
+if 0 and "TYPO3 specific":
 
     try:
         t3DocTeam
@@ -371,3 +371,77 @@ if 1 and "TYPO3 specific":
 #
 #=================================================
 
+
+
+#=================================================
+#
+# t3SphinxThemeRtd
+#
+#-------------------------------------------------
+
+
+import t3SphinxThemeRtd
+
+html_theme_path.append(t3SphinxThemeRtd.get_html_theme_path())
+
+html_theme = 't3SphinxThemeRtd'
+
+project   = u'TYPO3 Core APIs'
+copyright = u' 2000-2015'
+
+version = '7.0'
+release = '7.0.0'
+
+intersphinx_mapping = {}
+intersphinx_mapping['t3api'] = ('http://docs.typo3.org/TYPO3/CoreApiReference', None)
+intersphinx_mapping['t3cgl'] = ('http://docs.typo3.org/typo3cms/CodingGuidelinesReference/', None)
+intersphinx_mapping['t3cmsapi'] = ('http://typo3.org/api/typo3cms/', None)
+intersphinx_mapping['t3extbasebook'] = ('http://docs.typo3.org/typo3cms/ExtbaseFluidBook/', None)
+intersphinx_mapping['t3fal'] = ('http://docs.typo3.org/typo3cms/FileAbstractionLayerReference/', None)
+intersphinx_mapping['t3inside'] = ('http://docs.typo3.org/typo3cms/InsideTypo3Reference/', None)
+intersphinx_mapping['t3services'] = ('http://docs.typo3.org/typo3cms/Typo3ServicesReference/', None)
+intersphinx_mapping['t3skinning'] = ('http://docs.typo3.org/typo3cms/SkinningReference/', None)
+intersphinx_mapping['t3tca'] = ('http://docs.typo3.org/typo3cms/TCAReference/', None)
+intersphinx_mapping['t3tsconfig'] = ('http://docs.typo3.org/typo3cms/TSconfigReference', None)
+intersphinx_mapping['t3tsref'] = ('http://docs.typo3.org/typo3cms/TyposcriptReference/', None)
+
+html_theme_options = {
+    'github_repository': 'TYPO3-Documentation/TYPO3CMS-Reference-CoreApi',
+    'github_branch': 'latest'
+}
+latex_documents = [(
+    'Index',
+    't3api.tex',
+    u'Core APIs',
+    u'Documentation Team',
+    'manual')]
+
+latex_elements = {
+    'papersize': 'a4paper',
+    'pointsize': '10pt',
+    'preamble': '\\usepackage{typo3}',
+}
+#'t3sphinx.ext.t3extras',
+#'t3sphinx.ext.t3tablerows',
+#'t3sphinx.ext.targets',
+extensions = [
+    'sphinx.ext.extlinks',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinxcontrib.t3fieldlisttable',
+    'sphinxcontrib.t3tablerows',
+    'sphinxcontrib.t3targets',
+]
+exclude_patterns = ['_make']
+extlinks = {}
+extlinks['forge'] = ('https://forge.typo3.org/issues/%s', 'forge: ')
+highlight_language = 'php'
+master_doc = 'Index'
+pygments_style = 'friendly'
+today_fmt = '%Y-%m-%d %H:%M'
+
+
+if 0 and 'Use the classic theme':
+    html_theme = 'classic'
+    del html_theme_options['github_repository'], html_theme_options['github_branch']

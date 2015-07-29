@@ -15,6 +15,8 @@
 TYPO3 Core APIs
 ===============
 
+:ref:`Sitemap`
+
 :Previous Key:
       doc_core_api
 
