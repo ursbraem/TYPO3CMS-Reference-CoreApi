@@ -68,6 +68,35 @@ use the following configuration:
 This overwrites the default configuration shown in the first example for classes
 located in the namespace :code:`\Documentation\Examples\Controller`.
 
+Here's an example on how to add various Writers for the controllers of an extension (`ext_localconf.php`):
+
+    $GLOBALS['TYPO3_CONF_VARS']['LOG']['Namespace']['Myext']['Controllers']['writerConfiguration'] = array(
+	// File logger for all log messages (debug and up)
+	\TYPO3\CMS\Core\Log\LogLevel::DEBUG => array(
+		'TYPO3\\CMS\\Core\\Log\\Writer\\FileWriter' => array(
+			'logFile' => 'typo3temp/logs/myext_all.log'
+		),
+	),
+	// A separate file logger for warning and up
+	\TYPO3\CMS\Core\Log\LogLevel::WARNING => array(
+		'TYPO3\\CMS\\Core\\Log\\Writer\\FileWriter' => array(
+			'logFile' => 'typo3temp/logs/myext_critical.log'
+		),
+	),
+	// Database logger for error and up (create the database: cf. LogWriters)
+	\TYPO3\CMS\Core\Log\LogLevel::ERROR => array(
+		'TYPO3\\CMS\\Core\\Log\\Writer\\DatabaseWriter' => array(
+			'logTable' => 'tx_myext_log'
+		),
+	),
+    );
+
+If the concerned classes are not controllers, e.g. myext/Classes/Additional, the syntax is 
+
+    $GLOBALS['TYPO3_CONF_VARS']['LOG']['Namespace']['Myext']['Additional']['writerConfiguration'] = array( ...
+    
+Also note that the system cache has to be cleared for changes in the logger configuration to take effect.
+
 For extension "foo" with key "tx_foo" (not using namespaces), the configuration would be located at:
 
 .. code-block:: php
